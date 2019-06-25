@@ -52,7 +52,6 @@ fun process(cartId: Int, option: Int): Float {
                 }
             }
         }
-
     }
     return cost
 }
