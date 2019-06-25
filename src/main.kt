@@ -7,10 +7,9 @@ data class Cart(val id: Int) {
         }
 }
 
-data class Item(val id: Int, var price: Float, var category: String, var weight: Float)
+data class Item(val id: Int, var price: Float, var cat: String, var weight: Float)
 
 var carts: MutableList<Cart> = mutableListOf()
-
 
 fun main() {
 
@@ -34,22 +33,22 @@ fun process(cartId: Int, option: Int): Float {
         cost = 4.99F
 
         if (option == 1) {
-            for (item in cart.items) {
-                if (item.category == "C") {
+            for (i in cart.items) {
+                if (i.cat == "C") {
                     cost += 2.99F
                 }
-                if (item.category == "Q") {
-                    cost += item.weight / 1000 * 2.99F
+                if (i.cat == "Q") {
+                    cost += i.weight / 1000 * 2.99F
                 }
             }
         }
         if (option == 2) {
-            for (item in cart.items) {
-                if (item.category == "C") {
+            for (i in cart.items) {
+                if (i.cat == "C") {
                     cost += 4.99F
                 }
-                if (item.category == "Q") {
-                    cost += item.weight / 1000 * 2.99F
+                if (i.cat == "Q") {
+                    cost += i.weight / 1000 * 2.99F
                 }
             }
         }
